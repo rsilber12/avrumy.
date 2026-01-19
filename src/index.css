@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Avrumy Design System - Elegant, Minimal, Sophisticated */
+
+@font-face {
+  font-family: 'NibPro';
+  src: url('/fonts/NibPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+    
+    --cursor-blue: 200 80% 50%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 8%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 8%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 8%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 40 20% 92%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 40 20% 92%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 0 0% 16%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 35 30% 70%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 20% 92%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 40 20% 92%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 40 20% 92%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 40 20% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'NibPro', 'Cormorant Garamond', serif;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Luxurious smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-muted-foreground transition-all duration-300 hover:text-foreground font-sans;
+  }
+
+  .nav-link .nav-arrow {
+    @apply inline-block transition-transform duration-300 mr-2;
+  }
+
+  .nav-link:hover .nav-arrow {
+    @apply translate-x-1;
+  }
+
+  .text-small {
+    @apply font-sans;
+  }
+}
